@@ -1,0 +1,30 @@
+{
+  "name": "chrome-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Chrome browser integration",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "auto-download": "node auto-download-standalone.js"
+  },
+  "keywords": [
+    "mcp",
+    "chrome",
+    "browser"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "chrome-remote-interface": "^0.33.2"
+  },
+  "devDependencies": {
+    "@types/chrome-remote-interface": "^0.31.14",
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
