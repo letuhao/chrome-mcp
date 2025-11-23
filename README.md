@@ -67,15 +67,26 @@ npm run build
 
 ### Step 3: Start Chrome with Remote Debugging
 
-**Windows:**
+**⚠️ IMPORTANT:** For Chrome 136+, always use the profile script to handle security restrictions.
+
+**Windows (Recommended):**
+```powershell
+.\scripts\startup\start-chrome-debug-with-profile.ps1
+```
+
+This script automatically handles Chrome 136+ security restrictions and preserves your user data.
+
+**Alternative (Chrome < 136):**
+```bash
+.\scripts\startup\start-chrome-debug.bat
+```
+
+**Manual method (not recommended):**
 ```bash
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222
 ```
 
-Or use the provided script:
-```bash
-start-chrome-debug.bat
-```
+> **📖 For detailed setup instructions, see [SETUP_INSTRUCTIONS.md](SETUP_INSTRUCTIONS.md)**
 
 **macOS:**
 ```bash
@@ -110,6 +121,16 @@ google-chrome --remote-debugging-port=9222
 5. Save and verify connection status (should show "Connected")
 
 ## 🎯 Quick Start
+
+### Running Download Automation
+
+**Quick Setup:**
+1. Start Chrome: `.\scripts\startup\start-chrome-debug-with-profile.ps1`
+2. Start automation: `npm run auto-download`
+
+See [SETUP_INSTRUCTIONS.md](SETUP_INSTRUCTIONS.md) for detailed instructions.
+
+### Using MCP Tools in Cursor
 
 Once configured, you can control Chrome directly from Cursor chat:
 
@@ -196,11 +217,18 @@ Once configured, you can control Chrome directly from Cursor chat:
 
 ### Standalone Automation Script
 
-Run continuous monitoring in the background:
+**⚠️ IMPORTANT:** Always start Chrome with remote debugging first using the profile script:
+```powershell
+.\scripts\startup\start-chrome-debug-with-profile.ps1
+```
+
+Then run continuous monitoring in the background:
 
 ```bash
 npm run auto-download
 ```
+
+> **📖 See [SETUP_INSTRUCTIONS.md](SETUP_INSTRUCTIONS.md) for complete setup guide**
 
 **Features:**
 - Monitors Chrome tabs for ExHentai torrent pages
@@ -397,6 +425,11 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Cursor IDE](https://cursor.sh/) - AI-powered code editor
 
 ## 📖 Additional Documentation
+
+### Setup Guides
+- **[Setup Instructions](SETUP_INSTRUCTIONS.md)** - **START HERE** - Complete guide to correctly set up Chrome and automation
+- [Quick Start Automation](docs/QUICK_START_AUTOMATION.md) - Quick start guide for automation features
+- [Automation Setup Guide](docs/AUTOMATION_SETUP.md) - Detailed setup instructions for automation
 
 All documentation is organized in the [`docs/`](docs/) folder:
 
